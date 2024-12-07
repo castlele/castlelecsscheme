@@ -417,12 +417,12 @@ local theme = lush(function(injected_functions)
       htmlLink                                   { Underlined }, -- htmlLink       xxx links to Underlined
       helpUnderlined                             { Underlined }, -- helpUnderlined xxx links to Underlined
       MatchParen                                 { bg="#adadad", gui="underline", }, -- MatchParen     xxx cterm=underline gui=underline guibg=#adadad
-      Ignore                                     { fg="bg", }, -- Ignore         xxx ctermfg=0 guifg=bg
+      Ignore                                     { fg="bg", bg=colors.white }, -- Ignore         xxx ctermfg=0 guifg=bg
       helpIgnore                                 { Ignore }, -- helpIgnore     xxx links to Ignore
       helpBar                                    { Ignore }, -- helpBar        xxx links to Ignore
       helpStar                                   { Ignore }, -- helpStar       xxx links to Ignore
       helpBacktick                               { Ignore }, -- helpBacktick   xxx links to Ignore
-      NvimInternalError                          { bg="red", fg="red", }, -- NvimInternalError xxx ctermfg=9 ctermbg=9 guifg=Red guibg=Red
+      NvimInternalError                          { bg="red", fg=colors.bg, }, -- NvimInternalError xxx ctermfg=9 ctermbg=9 guifg=Red guibg=Red
       NvimFigureBrace                            { NvimInternalError }, -- NvimFigureBrace xxx links to NvimInternalError
       NvimSingleQuotedUnknownEscape              { NvimInternalError }, -- NvimSingleQuotedUnknownEscape xxx links to NvimInternalError
       NvimInvalidSingleQuotedUnknownEscape       { NvimInternalError }, -- NvimInvalidSingleQuotedUnknownEscape xxx links to NvimInternalError
@@ -454,7 +454,7 @@ local theme = lush(function(injected_functions)
       TelescopeResultsDiffUntracked              { }, -- TelescopeResultsDiffUntracked xxx cterm= gui=
       TelescopeSelection                         { bg=colors.search }, -- TelescopeSelection xxx cterm= gui=
       TelescopeSelectionCaret                    { TelescopeSelection }, -- TelescopeSelectionCaret xxx cterm= gui=
-      TelescopeMultiSelection                    { }, -- TelescopeMultiSelection xxx cterm= gui=
+      TelescopeMultiSelection                    { TelescopeSelection }, -- TelescopeMultiSelection xxx cterm= gui=
       TelescopeMultiIcon                         { }, -- TelescopeMultiIcon xxx cterm= gui=
       TelescopeNormal                            { }, -- TelescopeNormal xxx cterm= gui=
       TelescopePromptNormal                      { }, -- TelescopePromptNormal xxx cterm= gui=
@@ -470,8 +470,8 @@ local theme = lush(function(injected_functions)
       TelescopePromptCounter                     { }, -- TelescopePromptCounter xxx cterm= gui=
       TelescopeMatching                          { TelescopeSelection }, -- TelescopeMatching xxx cterm= gui=
       TelescopePromptPrefix                      { }, -- TelescopePromptPrefix xxx cterm= gui=
-      TelescopePreviewLine                       { }, -- TelescopePreviewLine xxx cterm= gui=
-      TelescopePreviewMatch                      { }, -- TelescopePreviewMatch xxx cterm= gui=
+      TelescopePreviewLine                       { TelescopeSelection }, -- TelescopePreviewLine xxx cterm= gui=
+      TelescopePreviewMatch                      { TelescopeSelection }, -- TelescopePreviewMatch xxx cterm= gui=
       TelescopePreviewPipe                       { }, -- TelescopePreviewPipe xxx cterm= gui=
       TelescopePreviewCharDev                    { }, -- TelescopePreviewCharDev xxx cterm= gui=
       TelescopePreviewDirectory                  { }, -- TelescopePreviewDirectory xxx cterm= gui=
